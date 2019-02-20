@@ -5,7 +5,7 @@ var mongoose = require("mongoose")
 var passportLocal = require("passport-local")
 var passportLocalMongoose = require("passport-local-mongoose");
 var expressSession = require("express-session");
-var User = require("./User.js")
+var User = require("./user.js")
 
 var app = express()
 
