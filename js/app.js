@@ -9,7 +9,7 @@ var User = require("./User.js")
 
 var app = express()
 
-mongoose.connect("mongodb://localhost:27017/auth_demo",{useNewUrlParser:true})
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser:true})
 app.use(bodyParser.urlencoded({extended:true}))
 app.set("views","./ejs")
 
@@ -75,7 +75,7 @@ function isLogout(req,res,next){
 	res.redirect("/login")
 }
 
-var server = app.listen("3000","127.0.0.1",function(){
+var server = app.listen(process.env.PORT,process.env.IP,function(){
 	console.log("Connected to server.")
 	console.log(server.address().port + " " + server.address().address)
 })
